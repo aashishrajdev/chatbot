@@ -4,11 +4,11 @@ A modern, user-friendly chatbot powered by Google's Gemini AI, built with Stream
 
 ## Features
 
-- 💬 Real-time chat interface
-- 🔒 Secure API key handling
-- 🎨 Clean and modern UI design
-- ⚡ Fast and responsive
-- 🔄 Persistent chat history
+-  Real-time chat interface
+-  Secure API key handling
+-  Clean and modern UI design
+-  Fast and responsive
+-  Persistent chat history
 
 ## Prerequisites
 
