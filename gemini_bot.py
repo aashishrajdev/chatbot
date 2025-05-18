@@ -10,25 +10,57 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# css
 st.markdown("""
     <style>
     .stApp {
         background-color: #FFFFFF;
         color: #000000;
     }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+        .stApp {
+            background-color: #0E1117;
+            color: #FAFAFA;
+        }
+        .user-message, .stChatMessage.user {
+            background-color: #1F1F1F !important;
+            color: #FAFAFA !important;
+        }
+        .assistant-message, .stChatMessage.assistant {
+            background-color: #2A2A2A !important;
+            color: #FAFAFA !important;
+        }
+        .stButton>button {
+            background-color: #2A2A2A;
+            color: #FAFAFA;
+        }
+        .stTextInput>div>div>input {
+            background-color: #1F1F1F;
+            color: #FAFAFA;
+        }
+        .stSelectbox>div>div>div {
+            background-color: #1F1F1F;
+            color: #FAFAFA;
+        }
+    }
+
+    /* Light mode */
+    @media (prefers-color-scheme: light) {
+        .user-message, .stChatMessage.user {
+            background-color: #F0F2F6 !important;
+            color: #000000 !important;
+        }
+        .assistant-message, .stChatMessage.assistant {
+            background-color: #E3E6EA !important;
+            color: #000000 !important;
+        }
+    }
+
     .stChatMessage {
         border-radius: 10px;
         padding: 1rem;
         margin: 0.5rem 0;
-    }
-    .user-message {
-        background-color: #F0F2F6;
-        color: #000000;
-    }
-    .assistant-message {
-        background-color: #E3E6EA;
-        color: #000000;
     }
     .stButton>button {
         border-radius: 20px;
@@ -47,6 +79,7 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
+
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
