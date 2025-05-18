@@ -13,37 +13,80 @@ st.set_page_config(
 # css
 st.markdown("""
     <style>
-    .stApp {
-        background-color: #FFFFFF;
-        color: #000000;
+    /* Base theme colors */
+    :root {
+        --background-color: var(--background-color);
+        --text-color: var(--text-color);
+        --user-message-bg: var(--user-message-bg);
+        --assistant-message-bg: var(--assistant-message-bg);
     }
+
+    /* Light mode (default) */
+    [data-theme="light"] {
+        --background-color: #FFFFFF;
+        --text-color: #000000;
+        --user-message-bg: #F0F2F6;
+        --assistant-message-bg: #E3E6EA;
+    }
+
+    /* Dark mode */
+    [data-theme="dark"] {
+        --background-color: #0E1117;
+        --text-color: #FFFFFF;
+        --user-message-bg: #1E2132;
+        --assistant-message-bg: #2D3347;
+    }
+
+    .stApp {
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }
+
     .stChatMessage {
         border-radius: 10px;
         padding: 1rem;
         margin: 0.5rem 0;
     }
+
     .user-message {
-        background-color: #F0F2F6;
-        color: #000000;
+        background-color: var(--user-message-bg);
+        color: var(--text-color);
     }
+
     .assistant-message {
-        background-color: #E3E6EA;
-        color: #000000;
+        background-color: var(--assistant-message-bg);
+        color: var(--text-color);
     }
+
     .stButton>button {
         border-radius: 20px;
         padding: 0.5rem 1rem;
         transition: all 0.3s ease;
+        background-color: var(--background-color);
+        color: var(--text-color);
     }
+
     .stButton>button:hover {
         transform: scale(1.05);
+        opacity: 0.9;
     }
+
     .stTextInput>div>div>input {
         border-radius: 20px;
         padding: 0.5rem 1rem;
+        background-color: var(--background-color);
+        color: var(--text-color);
     }
+
     .stSelectbox>div>div>div {
         border-radius: 20px;
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }
+
+    /* Ensure text in chat messages is readable */
+    .stChatMessageContent {
+        color: var(--text-color);
     }
     </style>
 """, unsafe_allow_html=True)
