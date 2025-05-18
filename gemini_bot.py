@@ -10,7 +10,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# css
 st.markdown("""
     <style>
     /* Base theme colors */
@@ -41,23 +40,19 @@ st.markdown("""
         background-color: var(--background-color);
         color: var(--text-color);
     }
-
     .stChatMessage {
         border-radius: 10px;
         padding: 1rem;
         margin: 0.5rem 0;
     }
-
     .user-message {
-        background-color: var(--user-message-bg);
-        color: var(--text-color);
+        background-color: #F0F2F6;
+        color: #000000;
     }
-
     .assistant-message {
-        background-color: var(--assistant-message-bg);
-        color: var(--text-color);
+        background-color: #E3E6EA;
+        color: #000000;
     }
-
     .stButton>button {
         border-radius: 20px;
         padding: 0.5rem 1rem;
@@ -90,6 +85,7 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
+
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
